@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Role of a controller - 
+    - work with user input / browser request
+    - handling incoming request and provide data to corresponding view or browser request.
+    - 
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +14,14 @@ namespace Demo.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public string Index()
         {
-            return View();
+            return "Hello, this my first app";
         }
-
-        public ActionResult About()
+        
+        public string Name()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return "My name is Odysseus";
         }
     }
 }
