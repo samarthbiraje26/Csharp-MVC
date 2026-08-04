@@ -1,0 +1,43 @@
+﻿@model Book_Management_System.Models.Book
+
+@{
+    ViewBag.Title = "Book Registration";
+}
+
+<h2>Book Registration</h2>
+
+@using (Html.BeginForm("Register", "Book", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(m => m.BookId)</td>
+            <td>@Html.TextBoxFor(m => m.BookId)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(m => m.BookName)</td>
+            <td>@Html.TextBoxFor(m => m.BookName)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(m => m.Price)</td>
+            <td>@Html.TextBoxFor(m => m.Price)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(m => m.Category)</td>
+            <td>@Html.TextBoxFor(m => m.Category)</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Register" />
+            </td>
+        </tr>
+    </table>
+}
+
+<br />
+
+@Html.ActionLink("View Book List", "BookList")

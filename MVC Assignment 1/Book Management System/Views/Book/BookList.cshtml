@@ -1,0 +1,39 @@
+﻿@model List<Book_Management_System.Models.Book>
+
+@{
+    ViewBag.Title = "Book List";
+}
+
+<h2>Book List</h2>
+
+@if (ViewBag.LastBook != null)
+{
+    <h4>Last Added Book : @ViewBag.LastBook</h4>
+}
+
+<p>
+    @Html.ActionLink("Add New Book", "Register")
+</p>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Book Id</th>
+        <th>Book Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BookId</td>
+            <td>@item.BookName</td>
+            <td>@item.Price</td>
+            <td>@item.Category</td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.BookId })
+            </td>
+        </tr>
+    }
+</table>

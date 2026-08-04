@@ -1,0 +1,33 @@
+﻿@model Book_Management_System.Models.Book
+
+@{
+    ViewBag.Title = "Book Details";
+}
+
+<h2>Book Details</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <td><b>Book Id</b></td>
+        <td>@Model.BookId</td>
+    </tr>
+
+    <tr>
+        <td><b>Book Name</b></td>
+        <td>@Model.BookName</td>
+    </tr>
+
+    <tr>
+        <td><b>Price</b></td>
+        <td>@Model.Price</td>
+    </tr>
+
+    <tr>
+        <td><b>Category</b></td>
+        <td>@Model.Category</td>
+    </tr>
+</table>
+
+<br />
+
+@Html.ActionLink("Back to Book List", "BookList")
