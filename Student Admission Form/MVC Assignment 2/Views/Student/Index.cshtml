@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Student Admission Form";
+}
+
+<link href="~/Content/Style.css" rel="stylesheet" />
+
+<div class="container">
+
+    <h2>Student Admission Form</h2>
+
+    <div id="successMessage" class="success-message"></div>
+
+    <div class="form-group">
+        <label><span class="required">*</span> Student Name</label>
+        <input type="text" id="StudentName" class="form-control" placeholder="Enter student name" />
+        <span class="error-message" id="nameError"></span>
+        <small id="typingMessage"></small>
+    </div>
+
+    <div class="form-group">
+        <label><span class="required">*</span> Email</label>
+        <input type="text" id="Email" class="form-control" placeholder="Enter email" />
+        <span class="error-message" id="emailError"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Course</label>
+        <select id="Course" class="form-control">
+            <option value="">-- Select Course --</option>
+            <option>BBA</option>
+            <option>BCA</option>
+            <option>B.Tech</option>
+            <option>MBA</option>
+            <option>Masters</option>
+            <option>BCS</option>
+        </select>
+        <span class="error-message" id="courseError"></span>
+        <small id="courseMessage"></small>
+    </div>
+
+    <div class="form-group">
+        <label>Age</label>
+        <input type="number" id="Age" class="form-control" placeholder="Enter age" />
+        <span class="error-message" id="ageError"></span>
+    </div>
+
+    <div class="form-group">
+        <label><span class="required">*</span> Gender</label><br />
+
+        <label>
+            <input type="radio" name="Gender" value="Male" /> Male
+            <input type="radio" name="Gender" value="Female" /> Female
+        </label>
+
+        <br />
+        <span class="error-message" id="genderError"></span>
+    </div>
+
+    <div class="form-group">
+        <label> Hostel Required
+            <input type="checkbox" id="HostelRequired" />
+        </label>
+    </div>
+
+    <div class="button-group">
+        <button type="button" id="btnSave" class="btn btn-save">Save</button>
+
+        <button type="button" id="btnClear" class="btn btn-clear">Clear</button>
+
+        <button type="button" id="btnDeleteTable" class="btn btn-clear">Delete Table</button>
+    </div>
+
+    <hr />
+
+    <h3>Student List</h3>
+
+    <p>
+        Total students:
+        <span id="totalStudents">0</span>
+    </p>
+
+    <table class="student-table" id="studentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Hostel</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentBody">
+        </tbody>
+    </table>
+
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/student.js"></script>
